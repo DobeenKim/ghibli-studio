@@ -4,7 +4,7 @@ import {useState, useEffect} from "react"
 import { GhibliTypes } from "../types/type"
 
 const Favorite = () => {
-    const [save, setSave] = useState([])
+    const [save, setSave] = useState<GhibliTypes[]>([])
 
     const handleDelete = (id:string) => {
         const data = localStorage.getItem('savedGhibli')
