@@ -9,7 +9,7 @@ const Ghibli = () => {
 
     const handleClick = (movie:GhibliTypes) => {
         const getmoreGhibli = localStorage.getItem('savedGhibli')
-        const parseGhibli = getmoreGhibli ?  JSON.parse(getmoreGhibli) : []
+        const parseGhibli:GhibliTypes[] = getmoreGhibli ?  JSON.parse(getmoreGhibli) : []
 
         const isAlreadyThere = parseGhibli.some(item=> item.id === movie.id)
         if(isAlreadyThere) {
