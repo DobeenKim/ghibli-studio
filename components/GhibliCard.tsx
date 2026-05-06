@@ -36,7 +36,7 @@ const Ghibli = () => {
         fetchGhibli()
     },[])
     return (
-        <div className="w-full">
+        <div className=" border-t  border-[#0d4c71] w-[95%] mx-auto"> 
             <div className="
                 w-5/6 
                 mx-auto  
@@ -49,7 +49,7 @@ const Ghibli = () => {
             ">
             {films && films.map((item:any,index:number) => (
                 <div key={index} className="relative group w-full overflow-hidden rounded-2xl bg-white transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_20px_50px_rgba(0,0,0,0.3)]">
-                    <button onClick={()=>handleClick(item)} className="text-red-700">
+                    <button onClick={()=>handleClick(item)} className="text-red-700 cursor-pointer">
                     <img 
                         src={item.image} 
                         alt={item.title} 

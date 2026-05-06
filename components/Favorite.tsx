@@ -29,15 +29,15 @@ const Favorite = () => {
         }
     },[])
     return (
-        <div className="p-10">
+        <div className="p-10 text-center text-[#0d4c71] text-3xl">
             <h1 className="text-2xl font-bold mb-5">My Ghibli storage</h1>
             {save.length === 0 ?(
-                <p>Empty</p>
+                <p className="text-[#0d4c71] text-1xl">Empty</p>
                 ) : (
                     <div className="w-5/6 mx-auto grid grid-cols-4 grid-rows-4 gap-4 pt-8 pb-8">
                         {save.map((movie:GhibliTypes) => (
                             <div key={movie.id}  className="relative group w-full overflow-hidden rounded-2xl bg-white transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_20px_50px_rgba(0,0,0,0.3)]">
-                                <button onClick={()=>handleDelete(movie.id)} className="text-red-700">
+                                <button onClick={()=>handleDelete(movie.id)} className="text-red-700 cursor-pointer">
                                 <img 
                                     src={movie.image} 
                                     alt={movie.title} 
