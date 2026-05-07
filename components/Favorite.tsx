@@ -2,14 +2,15 @@
 
 import {useState, useEffect} from "react"
 import { GhibliTypes } from "../types/type"
+import Card from "./Card"
 
 const Favorite = () => {
     const [save, setSave] = useState<GhibliTypes[]>([])
 
-    const handleDelete = (id:string) => {
+    const handleDelete = (movie:GhibliTypes) => {
         const data = localStorage.getItem('savedGhibli')
         const list = data ? JSON.parse(data) : []
-        const updatedList = list.filter((item:any) => item.id !== id);
+        const updatedList = list.filter((item:GhibliTypes) => item.id !== movie.id);
 
         localStorage.setItem('savedGhibli', JSON.stringify(updatedList))
 
@@ -29,15 +30,15 @@ const Favorite = () => {
         }
     },[])
     return (
-        <div className="p-10 text-center text-[#0d4c71] text-3xl">
-            <h1 className="text-2xl font-bold mb-5">My Ghibli storage</h1>
+        <div className=" text-center text-[#0c74b0] border-t  border-[#118cd2] w-[95%] mx-auto">
+            <h1 className="text-2xl font-bold pt-8">My Ghibli storage</h1>
             {save.length === 0 ?(
-                <p className="text-[#0d4c71] text-1xl">Empty</p>
+                <p className="text-[#0d4c71] text-2xl font-bold mb-5 pt-16">Your favorites list is empty.</p>
                 ) : (
-                    <div className="w-5/6 mx-auto grid grid-cols-4 grid-rows-4 gap-4 pt-8 pb-8">
+                    <div className="w-5/6 mx-auto grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 grid-rows-4 gap-4 pt-8 pb-8">
                         {save.map((movie:GhibliTypes) => (
                             <div key={movie.id}  className="relative group w-full overflow-hidden rounded-2xl bg-white transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_20px_50px_rgba(0,0,0,0.3)]">
-                                <button onClick={()=>handleDelete(movie.id)} className="text-red-700 cursor-pointer">
+                                {/*<button onClick={()=>handleDelete(movie.id)} className="text-red-700 cursor-pointer">
                                 <img 
                                     src={movie.image} 
                                     alt={movie.title} 
@@ -55,7 +56,10 @@ const Favorite = () => {
                                         Director: {movie.director}
                                     </span>
                                 </div>
-                                </button>
+                                </button>*/}
+                                <Card 
+                                item={movie}
+                                onAction={handleDelete}/>
                             </div>
                         ))}
                     </div>
