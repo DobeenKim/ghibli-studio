@@ -3,10 +3,8 @@ import Favorite from "../components/Favorite"
 const FavoritePage = () => {
     return(
         <>
-        <Favorite />
-        <p>googoggo</p>
+            <Favorite />
         </>
-        
     )
 }
 export default FavoritePage
