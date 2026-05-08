@@ -3,6 +3,7 @@ import Logo from "../public/logo2.png"
 import Text from "../public/text.png"
 import Link from "next/link"
 import { MdFavoriteBorder } from "react-icons/md";
+import Btn from "./btn";
 
 
 const Header = () => {
@@ -15,9 +16,8 @@ const Header = () => {
                 <div className="w-70 lg:w-100 h-auto p-1 md:p-4">
                     <Image src={Text} alt="text" className="w-full"/>
                 </div>
-                <div className=" text-amber-50 text-base font-medium flex gap-6 md:p-6 p-2  items-center justify-center">
-                    <Link href={`/favorite/`}><MdFavoriteBorder className="text-black place-items: center; w-8 h-8 lg:w-12 lg:h-12"/></Link>
-                </div>
+                <Btn className="
+                hidden md:flex"/>
             </div>
         </div>
     )

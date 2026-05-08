@@ -3,6 +3,7 @@
 import {useState, useEffect} from  "react"
 import {GhibliTypes} from "../types/type"
 import Card from "./Card"
+import Btn from "./btn"
 
 const Ghibli = () => {
 
@@ -60,6 +61,8 @@ const Ghibli = () => {
                 </div>
             ))}
             </div>
+            <Btn className="flex md:hidden fixed bottom-0 left-0 right-0 z-50 bg-[#118cd2] justify-center p-3"/>
+            
         </div>
     )
 }
