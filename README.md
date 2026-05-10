@@ -4,13 +4,13 @@
 <h4>Explore the beautiful world of Studio Ghibli masterpieces and save your favorite films to your personal collection</h4>
 <br>
 <h4>Tech Stack</h4>
-Framework: Next.js 14+ (App Router)
+Framework: Next.js 14+ 
 
 Styling: Tailwind CSS
 
 Language: TypeScript
 
-Icons: React Icons (Material Design)
+Icons: React Icons 
 
 Data Source: Studio Ghibli API
 <br>
