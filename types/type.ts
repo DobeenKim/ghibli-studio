@@ -4,5 +4,4 @@ export type GhibliTypes = {
     description:"string",
     id:string,
     director:string,
-    clicked: boolean;
 }
