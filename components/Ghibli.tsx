@@ -42,6 +42,10 @@ const Ghibli = () => {
 
     return (
         <div className=" border-t  border-[#118cd2] w-[95%] mx-auto"> 
+            <div className="w-[83%] mx-auto pt-8 font-bold 600">
+                <p>Hover over any image to reveal detailed information about the movie!</p>
+                <p>Pick your favorite Ghibli films to save them in your local storage!</p>
+            </div>
             <div className="
                 w-5/6 
                 mx-auto  

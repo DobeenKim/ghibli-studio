@@ -5,6 +5,7 @@ import { GhibliTypes } from "../types/type"
 import Card from "./Card"
 import Btn from "./btn"
 
+
 const Favorite = () => {
     const [save, setSave] = useState<GhibliTypes[]>([])
 

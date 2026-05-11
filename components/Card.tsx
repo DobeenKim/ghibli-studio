@@ -8,7 +8,7 @@ interface CardProps {
 const Card = ({item,onAction}:CardProps) => {
     return (
         <div>
-            <button onClick={()=>onAction(item)} className="text-red-700 cursor-pointer">
+            <button onClick={()=>onAction(item)} className=" cursor-pointer">
                 <img 
                     src={item.image} 
                     alt={item.title} 

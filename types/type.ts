@@ -3,5 +3,6 @@ export type GhibliTypes = {
     image:"string",
     description:"string",
     id:string,
-    director:string
+    director:string,
+    clicked: boolean;
 }
