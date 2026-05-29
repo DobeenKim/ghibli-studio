@@ -17,4 +17,5 @@ Data Source: Studio Ghibli API
 <br>
 Live Demo:https://ghibli-studio-git-main-dobeen-kims-projects.vercel.app/
 
-<img width="1903" height="1108" alt="img" src="https://github.com/user-attachments/assets/2abf4feb-06cc-49a4-96f0-72a060c03ef4" />
+<img width="1905" height="1112" alt="ghibli-img" src="https://github.com/user-attachments/assets/43467581-20f1-43e4-bfbb-d6847d608cf9" />
+
