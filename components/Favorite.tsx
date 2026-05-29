@@ -4,6 +4,7 @@ import {useState, useEffect} from "react"
 import { GhibliTypes } from "../types/type"
 import Card from "./Card"
 import Btn from "./btn"
+import toast, {Toaster}  from 'react-hot-toast';
 
 
 const Favorite = () => {
@@ -17,7 +18,7 @@ const Favorite = () => {
         localStorage.setItem('savedGhibli', JSON.stringify(updatedList))
 
         setSave(updatedList)
-        alert("Removed from favorites.");
+        toast.success("Removed from favorites.");
     }
 
     useEffect(()=> {
@@ -33,6 +34,7 @@ const Favorite = () => {
     },[])
     return (
         <div className=" text-center text-[#0c74b0] border-t  border-[#118cd2] w-[95%] mx-auto">
+            <Toaster />
             <h1 className="text-2xl font-bold pt-8">My Ghibli storage</h1>
             {save.length === 0 ?(
                 <p className="text-[#0d4c71] text-2xl font-bold mb-5 pt-16">Your favorites list is empty.</p>

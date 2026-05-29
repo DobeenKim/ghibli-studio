@@ -4,24 +4,37 @@ import {useState, useEffect} from  "react"
 import {GhibliTypes} from "../types/type"
 import Card from "./Card"
 import Btn from "./btn"
+import toast, {Toaster}  from 'react-hot-toast';
 
 const Ghibli = () => {
 
     const [films , setFilms] = useState<GhibliTypes[]>([]);
+    const [message, setMessage] = useState<string | null>(null)
+    useEffect(() => {
+        if(message) {
+            if(message.includes("Already")) {
+                toast.error(message);
+            } else {
+                toast.success(message)
+            }
+            setMessage(null)
+        }
+    },[message])
 
     const handleClick = (movie:GhibliTypes) => {
         const getmoreGhibli = localStorage.getItem('savedGhibli')
         const parseGhibli:GhibliTypes[] = getmoreGhibli ?  JSON.parse(getmoreGhibli) : []
-
         const isAlreadyThere = parseGhibli.some(item=> item.id === movie.id)
+        
         if(isAlreadyThere) {
-            alert("Already added to favorites!");
-            return; 
+            setMessage("Already added to favorites!");
+            return;
         } else {
-            alert(" Added to favorites!");
+            setMessage("Added to favorites!")
         }
-
+        
         parseGhibli.push(movie)
+        
         localStorage.setItem('savedGhibli', JSON.stringify(parseGhibli))
     }
     
@@ -30,7 +43,6 @@ const Ghibli = () => {
             const response:Response = await fetch(`https://ghibliapi.dev/films`)
             const data:any = await response.json()
             setFilms(data)
-            console.log("데이터연결",data)
         } catch (error) {
             console.log( error )
         }
@@ -41,7 +53,9 @@ const Ghibli = () => {
     },[])
 
     return (
-        <div className=" border-t  border-[#118cd2] w-[95%] mx-auto"> 
+        <div className=" border-t  border-[#118cd2] w-[95%] mx-auto">
+            <button onClick={()=>handleClick}>Add to favorites</button>
+            <Toaster position="top-center" reverseOrder={false}/> 
             <div className="w-[83%] mx-auto pt-8 font-bold 600">
                 <p>Hover over any image to reveal detailed information about the movie!</p>
                 <p>Pick your favorite Ghibli films to save them in your local storage!</p>
